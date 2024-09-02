@@ -57,8 +57,8 @@
   ansible.builtin.apt:
     name: "{{ gitlab_runner_helper_package }}"
     state: "{{ gitlab_runner_package_state }}"
-    allow_change_held_packages: true
-    allow_downgrade: true
+    #allow_change_held_packages: true
+    #allow_downgrade: true
   become: true
   when: gitlab_runner_package_version is undefined or gitlab_runner_package_version is version('17.7.0', '>=')
 
@@ -66,8 +66,8 @@
   ansible.builtin.apt:
     name: "{{ gitlab_runner_package }}"
     state: "{{ gitlab_runner_package_state }}"
-    allow_change_held_packages: true
-    allow_downgrade: true
+    #allow_change_held_packages: true
+    #allow_downgrade: true
   become: true
 
 - name: (Debian) Hold GitLab Runner version
